@@ -39,7 +39,7 @@ class Updates {
     }
 
 
-    public function updateAvailable(string $module_name = NULL, string $local_module_version = NULL) : Bool
+    public function updateAvailable(String $module_name = NULL, String $local_module_version = NULL) : Bool
     {
 
         // Need module name to check store!
@@ -112,7 +112,7 @@ class Updates {
 
     }
 
-    public function getUpdateResponse(string $module_name = NULL)
+    public function getUpdateResponse(String $module_name = NULL)
     {
         // Need module name to check store!
         if (!$module_name)
@@ -133,7 +133,7 @@ class Updates {
     }
 
 
-    public function getFeed(string $module_name = '')
+    public function getFeed(string $module_name = '') : String
     {
 
         $url = 'https://expressionengine.com/add-ons/addon-feed/'.$module_name;
@@ -153,8 +153,8 @@ class Updates {
                 CURLOPT_URL => $url,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
-                CURLOPT_MAXREDIRS => 3,
-                CURLOPT_TIMEOUT => 5,
+                CURLOPT_MAXREDIRS => 2,
+                CURLOPT_TIMEOUT => 3,
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
                 CURLOPT_CUSTOMREQUEST => 'GET',
@@ -172,7 +172,6 @@ class Updates {
             return $data;
 
         }
-
 
     }
 

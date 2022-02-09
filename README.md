@@ -41,4 +41,3 @@ Notes:
 
 - This would be blocking to the page load, and be better handled over an async javascript call.
 - The default is 1 day between checks.
-
