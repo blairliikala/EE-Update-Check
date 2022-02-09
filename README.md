@@ -17,7 +17,7 @@ if ($this->settings['check_for_updates'] == 'y')
    
    if ($hasUpdate)
     {
-        $ee_store_response = ee('mux:Updates')->getUpdateResponse(STORE_NAME);
+        $ee_store_response = ee('youraddon:Updates')->getUpdateResponse(STORE_NAME);
 
         if ($store_response)
         {
